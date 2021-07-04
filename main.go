@@ -1,8 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"github.com/gofiber/fiber/v2"
+	"github.com/rilladev/rilla/routes"
 )
 func main(){
-	fmt.Println("first app")
+	app := fiber.New()
+	
+	routes.Setup(app)
+
+	app.Listen(":4000")
 }
